@@ -51,3 +51,7 @@ AnyBinaryOperaion = Union[
     OperationDiv,
 ]
 
+
+class Response(BaseModel):
+    result: Decimal
+

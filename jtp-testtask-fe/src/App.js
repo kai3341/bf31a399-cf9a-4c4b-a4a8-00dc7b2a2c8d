@@ -6,7 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 
 const initialSign = "add";
-const initialResult = "";
+const initialResult = { result: "" };
 const appBoxSX = { m: 1, display: "flex" };
 const resultTextFieldInputProps = { readOnly: true };
 
@@ -40,6 +40,8 @@ function App() {
     if (request.status === 200) {
       const response = await request.json();
       setResult(response);
+    } else {
+      resetResult();
     }
   };
 
@@ -76,7 +78,7 @@ function App() {
       <TextField
         variant="outlined"
         InputProps={resultTextFieldInputProps}
-        value={result}
+        value={result.result}
       />
     </Box>
   );
